@@ -1,0 +1,175 @@
+/*common*/
+
+#content {
+	margin: 2.5rem 0;
+	overflow:hidden;
+}
+
+/*messagePage*/
+.aui-bar.aui-bar-nav {
+	background-color: #FFF;
+	color:#000;
+	position: fixed;
+	top:0;
+	height: 2.5rem;
+}
+.aui-row.msg-card {
+	padding: .75rem;	
+	background-color: #FFF;
+}
+.aui-row.msg-card .car-content {
+	padding: .5rem 0 0 .5rem;
+}
+.msg-advice {
+	width: 100%;
+	height: 4rem;
+	background: url(imgs/微信图片1.png) no-repeat rgb(254,219,67);
+	background-size: 100% 
+	padding: 0.25rem
+}
+.advice-message p {
+	font-weight: 700;
+	color: rgba(0,0,0,.7);
+	padding: 1rem 0 0 3rem
+}
+.advice-message button {
+	background-color: #FFF;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #000;
+	margin-top: 1.5rem;
+	font-weight: 700;
+	border-radius: 0;
+}
+.plus-btn {
+	 width: 2.5rem; 
+	 height:2.5rem;
+	 line-height: 2rem; 
+	 border-radius: 1.25rem;
+	 margin: -1.25rem auto 0;
+	 border-top: 1px solid #ccc;
+	 background-color: rgb(254,219,67);
+	 font-weight: 700;
+	 color: rgba(0,0,0,.7)
+}
+
+/*chatPage*/
+#header{
+	position: fixed;
+	top: 0;
+	color: #000
+}
+#header span { color: #000; }
+
+.chatting-about {
+	padding: 0.5rem;
+	height: 4rem;
+	background-color: #fff
+}
+.item-info {
+	padding-left: .5rem
+}
+.aui-btn.aui-btn-danger {
+	border-radius: 0;
+	height: 2rem;
+	line-height: 2rem;
+	margin: .5rem 1rem 0 0;
+	float: right
+}
+.chatting-bar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+	background-color: #FFF;
+	border-top: 1px solid #ccc;
+	padding-left: 1rem
+}
+.chatting-bar-btn {
+	height: 2.5rem;
+	line-height: 2.5rem;
+	text-align: center;
+	margin-right: 1rem
+}
+.iconfont {
+	font-size: 1.25rem !important;
+	color: rgba(0,0,0,.6)
+}
+.chatting-bar-input {
+	float: left;
+	height: 2.5rem;
+
+	
+}
+.chatting-bar-input input {
+	display: block;
+	height: 100%;
+	width: 6rem;
+	font-size: .6rem
+}
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+.chat-time {
+	padding: .3rem .1rem;
+	background-color: #CCC;
+	max-width: 50%;
+	margin: 0 auto;
+	border-radius: .5rem;
+	color: #FFF !important;
+	clear:both;
+}
+.aui-chat .aui-chat-left .aui-chat-content {
+	background-color: #FFF
+}
+.aui-chat .aui-chat-left .aui-chat-arrow{
+    background-image: -webkit-linear-gradient(45deg, #FFF, #FFF 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #FFF, #FFF 50%, transparent 50%);
+}
+.aui-chat .aui-chat-right .aui-chat-content {
+	background-color: #FEDB43
+}
+.aui-chat .aui-chat-right .aui-chat-arrow{
+    background-image: -webkit-linear-gradient(45deg, #FEDB43, #FEDB43 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #FEDB43, #FEDB43 50%, transparent 50%);
+}
+
+/*salesPage*/
+#header{
+	position: fixed;
+	top: 0;
+	color: #000
+}
+#header span { color: #000; }
+
+.time-tag {
+	width: 50%;
+	padding: .2rem .5rem;
+	color: #FFF;
+	background-color: #CCC;
+	font-size: .6rem;
+	text-align: center;
+	border-radius: .25rem;
+	margin: .5rem auto;
+}
+.aui-btn.salesPage {
+	background-color: transparent !important;
+	font-size: .8rem
+}
+.aui-card-list-header h3 { font-weight: 700 }
+.aui-tips {
+	background-color: #D6DADD;
+	color: #686868;
+	position: fixed;
+	bottom: 0
+}
+.aui-tips {
+
+}
+.aui-tips .aui-btn {
+	font-size: .7rem;
+	padding: 0 .1rem
+}

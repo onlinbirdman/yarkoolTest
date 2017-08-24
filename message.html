@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" href="aui/css/aui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+	<title>yarkool机试题目</title>
+
+</head>
+<body>
+	<div id="test" class="aui-hide" style="padding: 10rem 1rem; text-align: center"></div>
+	<div class="aui-content" id="messagePage">
+		<!-- 顶部导航栏 -->
+		<header class="aui-bar aui-bar-nav msg-header" id="header">消息</header>
+		<!-- 顶部导航栏END -->
+		<!-- 内容区域 -->
+		<div class="content" id="content">
+		<!-- 顶部提示建议 -->
+		<div class="msg-advice">
+			<i class="aui-iconfont aui-icon-close aui-pull-right" onclick="closeAdvice()"></i>
+			<div class="advice-message aui-row">
+				<p class="aui-col-xs-9">打开自启动权限，不错过任何一次可能成交的机会</p>
+				<button class="aui-col-xs-3" aui-popup-for="top-left" onclick="openDialog('callback')">立即开启</button>
+			</div>
+		</div>
+
+		<!-- 卡片列表 -->
+			<!-- 系统信息卡片 -->
+			<div class="msg-card aui-row aui-border-b" id="sales" onclick="gotoSalesPage()">
+		 		<div class="card-img aui-col-xs-2">
+		 			<img class="aui-img-round" src="imgs/panda.jpg" alt="">
+		 			<div class="aui-dot" style="top:10%;right: 10%"></div>
+		 		</div>
+		 		<div class="car-content aui-col-xs-10">
+					<h4>活动消息</h4>
+
+					<p><small>专属推荐，这么多好货等你来挑！&gt;&gt;</small></p>
+					<p><small>22小时前</small></p>
+		 		</div>
+			</div>
+
+			<div class="msg-card aui-row aui-border-b" onclick="gotoSalesPage()">
+		 		<div class="card-img aui-col-xs-2">
+		 			<img class="aui-img-round" src="imgs/dog.jpg" alt="">
+		 		</div>
+		 		<div class="car-content aui-col-xs-10">
+					<h4>通知</h4>
+					<p><small>芝麻信用授权提醒</small></p>
+					<p><small>1天前</small></p>
+		 		</div>
+			</div>
+			
+			<!-- 聊天框卡片 -->
+			<div class="msg-card aui-row aui-border-b" onclick="gotoChatPage()">
+		 		<div class="card-img aui-col-xs-2">
+		 			<img class="aui-img-round" src="imgs/cat.jpg" alt="">
+		 		</div>
+		 		<div class="car-content aui-col-xs-8">
+					<h4>zy220093</h4>
+					<p><small>在的</small></p>
+					<p><small>1天前</small></p>
+		 		</div>
+		 		<div class="item-img aui-col-xs-2">
+			 		<img src="imgs/kindle.jpg" alt="">
+		 		</div>
+			</div>
+
+			<div class="msg-card aui-row aui-border-b" onclick="gotoChatPage()">
+		 		<div class="card-img aui-col-xs-2">
+		 			<img class="aui-img-round" src="imgs/dog.jpg" alt="">
+		 		</div>
+		 		<div class="car-content aui-col-xs-8">
+					<h4>beyongmia <span class="aui-text-danger">交保证金完成</span></h4>
+					<p class="aui-ellipsis-1"><small>好的，没事，只要寄过来的时候时候时候时候时候时候时候时候时候时候时候</small></p>
+					<p><small>3天前</small></p>
+		 		</div>
+		 		<div class="item-img aui-col-xs-2">
+			 		<img src="imgs/kindle.jpg" alt="">
+		 		</div>
+			</div>
+		</div>
+		<!-- 内容区域 END-->
+		<!-- 底部导航栏 -->
+	    <footer class="aui-bar aui-bar-tab aui-border-t" id="footer">
+	        <div class="aui-bar-tab-item aui-active" tapmode>
+	            <i class="aui-iconfont aui-icon-home"></i>
+	            <div class="aui-bar-tab-label">闲鱼</div>
+	        </div>
+	        <div class="aui-bar-tab-item" tapmode>
+	            <i class="aui-iconfont aui-icon-search"></i>
+	            <div class="aui-bar-tab-label">鱼塘</div>
+	        </div>
+	        <div class="aui-bar-tab-item" tapmode >
+	            <div class="plus-btn">
+	            	<i class="aui-iconfont aui-icon-plus"></i>
+	            </div>
+	            
+	        </div>
+	        <div class="aui-bar-tab-item" tapmode>
+	            <div class="aui-dot"></div>
+	            <i class="aui-iconfont aui-icon-comment"></i>
+	            <div class="aui-bar-tab-label">消息</div>
+	        </div>
+	        <div class="aui-bar-tab-item" tapmode>
+	            <i class="aui-iconfont aui-icon-my"></i>
+	            <div class="aui-bar-tab-label">我的</div>
+	        </div>
+	    </footer>
+	    <!-- 底部导航栏END -->
+
+	</div>
+
+	<div style="display: none" class="aui-content" id="chatPage">
+		<!-- Top -->
+		<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
+			<a class="aui-pull-left aui-btn" onclick="gotoMsgPage()">
+				<span class="aui-iconfont aui-icon-left"></span>
+			</a>
+			<div class="aui-title" id="chatting-name">zy220093</div>
+			<a class="aui-pull-right aui-btn ">
+		        <span class="iconfont icon-gengduo"></span>
+		    </a>
+		</header>
+
+		<!-- Chatting Area -->
+		<div class="content" id="content">
+			<div class="chatting-about aui-row">
+				<img  class="aui-col-xs-2" src="imgs/kindle.jpg" alt="" class="item-img" style="height: 100%">
+				<div class="item-info aui-col-xs-4">
+					<h4 class="item-price">￥308.00</h4>
+					<p class="item-remark"><small>含运费8.0元</small></p>
+					<p class="chat-statu"><small>交易前聊一聊</small></p>
+				</div>
+				<div class="aui-col-xs-6 ">
+					<div class="aui-btn aui-btn-danger buy-item">立即购买</div>
+				</div>
+			</div>
+			<!-- 聊天内容 -->
+			<div class="aui-chat">
+				<div class="aui-chat-header chat-time">2017年08月14日 23:24</div>
+				<div class="aui-chat-item aui-chat-right" >
+					<div class="aui-chat-media">
+						<img src="imgs/cat.jpg" alt="">
+					</div>
+					<div class="aui-chat-inner">
+						<div class="aui-chat-content chat-content">
+							<div class="aui-chat-arrow chat-content"></div>
+							你好
+						</div>
+						<div class="aui-chat-status"></div>
+					</div>
+				</div>
+
+				<div class="aui-chat-item aui-chat-right" >
+					<div class="aui-chat-media">
+						<img src="imgs/cat.jpg" alt="">
+					</div>
+					<div class="aui-chat-inner">
+						<div class="aui-chat-content ">
+							<div class="aui-chat-arrow"></div>
+							请问kindle还在吗？
+						</div>
+						<div class="aui-chat-status"></div>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="aui-chat">
+				<div class="aui-chat-header chat-time">2017年08月15日 00:11</div>
+
+				<div class="aui-chat-item aui-chat-left" >
+					<div class="aui-chat-media">
+						<img src="imgs/dog.jpg" alt="">
+					</div>
+					<div class="aui-chat-inner">
+						<div class="aui-chat-content">
+							<div class="aui-chat-arrow"></div>
+							在的
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="aui-chat">
+				<div class="aui-chat-header chat-time">2017年08月15日 00:11</div>
+
+				<div class="aui-chat-item aui-chat-left" >
+					<div class="aui-chat-media">
+						<img src="imgs/dog.jpg" alt="">
+					</div>
+					<div class="aui-chat-inner">
+						<div class="aui-chat-content">
+							<div class="aui-chat-arrow"></div>
+							在的
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="aui-chat">
+				<div class="aui-chat-header chat-time">2017年08月15日 00:11</div>
+
+				<div class="aui-chat-item aui-chat-left" >
+					<div class="aui-chat-media">
+						<img src="imgs/dog.jpg" alt="">
+					</div>
+					<div class="aui-chat-inner">
+						<div class="aui-chat-content">
+							<div class="aui-chat-arrow"></div>
+							在的
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="aui-chat">
+				<div class="aui-chat-header chat-time">2017年08月15日 00:11</div>
+
+				<div class="aui-chat-item aui-chat-left" >
+					<div class="aui-chat-media">
+						<img src="imgs/dog.jpg" alt="">
+					</div>
+					<div class="aui-chat-inner">
+						<div class="aui-chat-content">
+							<div class="aui-chat-arrow"></div>
+							在的
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 聊天内容END -->
+		</div>
+
+		<!-- Footer -->
+		<footer class="chatting-bar" id="footer">
+			<div class="chatting-bar-btn floatLeft">
+				<i class="iconfont icon-maikefeng"></i>
+			</div>
+			
+			<div class="chatting-bar-input">
+				<input type="text" placeholder="你想对Ta说什么？">
+			</div>
+
+			<div class="chatting-bar-btn floatRight">
+				<i class="iconfont icon-jiahao"></i>
+			</div>
+			<div class="chatting-bar-btn floatRight">
+				<i class="iconfont icon-xiaolian"></i>
+			</div>
+		</footer>
+	</div>
+
+	<div style="display: none" class="aui-content" id="salesPage">
+		<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
+			<a class="aui-pull-left aui-btn" onclick="gotoMsgPage()">
+				<span class="aui-iconfont aui-icon-left"></span>
+			</a>
+			<div class="aui-title" id="chatting-name">活动消息</div>
+		</header>
+		<div id="content">
+			<div class="time-tag">
+				2017年08月15日 11:09
+			</div>
+
+			<div class="aui-card-list" onclick="showDefault()">
+		        <div class="aui-card-list-header">
+		            <h3>专属推荐，这么多好货等你来挑！&gt;&gt;</h3>
+		        </div>
+		        <div class="aui-card-list-content-padded aui-border-b">
+		           <p>
+		           	 <small>这些女裙你觉得怎么样！</small>
+		           </p>
+		        </div>
+		        <div class="aui-card-list-footer ">
+		            <div class="aui-btn aui-text-primary salesPage">点我看看</div>
+		            <a class="aui-pull-right aui-btn salesPage">
+						<span class="aui-iconfont aui-icon-right " style="color:#000"></span>
+					</a>
+		        </div>
+		    </div>
+
+		    <div class="time-tag">
+				2017年08月14日 11:22
+			</div>
+
+			<div class="aui-card-list" onclick="showDefault()">
+		        <div class="aui-card-list-header">
+		            <h4>宝贝七折上新，不要错过呦！</h4>
+		        </div>
+		        <div class="aui-card-list-content-padded">
+		           <p>
+		           	 <small>这些商品的性价比超级高哦，来看看吧&gt;&gt;</small>
+		           </p>
+		        </div>
+		        <div class="aui-card-list-footer ">
+		            <img src="imgs/fish.png" alt="">
+		        </div>
+		    </div>
+
+	
+
+			<div class="aui-tips" id="tips-1">
+			    <i class="aui-iconfont aui-icon-info"></i>
+			    <div class="aui-tips-title">不想收到此类通知，可以<a class="aui-btn salesPage" onclick="closeTips()">关闭提醒</a>哦~</div>
+			    <i class="aui-iconfont aui-icon-close" onclick="closeTips()"></i>
+			</div>
+		</div>
+	</div>	
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="aui/script/aui-toast.js"></script>
+<script src="aui/script/aui-dialog.js"></script>
+<script type="text/javascript" src="aui/script/aui-tab.js" ></script>
+
+<script src='js/main.js'></script>
+</body>
+</html>
