@@ -83,7 +83,7 @@ var App = new Vue({
 	},
 	components:{
 		'chat-right': chatRight
-	}
+	},
 	created() {
 		$('body').scrollTop('9999')
 	}
