@@ -77,14 +77,14 @@ var App = new Vue({
 					this.msg = ''
 				}
 // 				localStorage.setItem('chatRecord',JSON.stringify(this.chatContent));
-				$('body').scrollTop('9999')
+				
 			}
 		}
 	},
 	components:{
 		'chat-right': chatRight
 	},
-	created() {
+	updated() {
 		$('body').scrollTop('9999')
 	}
 })
