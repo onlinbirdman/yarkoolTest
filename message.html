@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div id="test" class="aui-hide" style="padding: 10rem 1rem; text-align: center"></div>
-	<div class="aui-content" id="messagePage">
+	<div  class="aui-content" id="messagePage">
 		<!-- 顶部导航栏 -->
 		<header class="aui-bar aui-bar-nav msg-header" id="header">消息</header>
 		<!-- 顶部导航栏END -->
@@ -113,7 +113,7 @@
 
 	</div>
 
-	<div style="display: none" class="aui-content" id="chatPage">
+	<div style="display: none"  class="aui-content" id="chatPage">
 		<!-- Top -->
 		<header class="aui-bar aui-bar-nav aui-bar-light" id="header">
 			<a class="aui-pull-left aui-btn" onclick="gotoMsgPage()">
@@ -126,7 +126,7 @@
 		</header>
 
 		<!-- Chatting Area -->
-		<div class="content" id="content">
+		<div class="chat-content" id="content">
 			<div class="chatting-about aui-row">
 				<img  class="aui-col-xs-2" src="imgs/kindle.jpg" alt="" class="item-img" style="height: 100%">
 				<div class="item-info aui-col-xs-4">
@@ -139,7 +139,7 @@
 				</div>
 			</div>
 			<!-- 聊天内容 -->
-			<div class="aui-chat">
+			<div class="aui-chat  chat-window">
 				<div class="aui-chat-header chat-time">2017年08月14日 23:24</div>
 				<div class="aui-chat-item aui-chat-right" >
 					<div class="aui-chat-media">
@@ -156,7 +156,7 @@
 
 				<div class="aui-chat-item aui-chat-right" >
 					<div class="aui-chat-media">
-						<img src="imgs/cat.jpg" alt="">
+						<img :src="user.avatorUrl" alt="">
 					</div>
 					<div class="aui-chat-inner">
 						<div class="aui-chat-content ">
@@ -167,9 +167,7 @@
 					</div>
 				</div>
 				
-			</div>
-
-			<div class="aui-chat">
+				
 				<div class="aui-chat-header chat-time">2017年08月15日 00:11</div>
 
 				<div class="aui-chat-item aui-chat-left" >
@@ -183,11 +181,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="aui-chat">
-				<div class="aui-chat-header chat-time">2017年08月15日 00:11</div>
-
 				<div class="aui-chat-item aui-chat-left" >
 					<div class="aui-chat-media">
 						<img src="imgs/dog.jpg" alt="">
@@ -199,11 +192,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="aui-chat">
-				<div class="aui-chat-header chat-time">2017年08月15日 00:11</div>
-
 				<div class="aui-chat-item aui-chat-left" >
 					<div class="aui-chat-media">
 						<img src="imgs/dog.jpg" alt="">
@@ -215,40 +203,51 @@
 						</div>
 					</div>
 				</div>
+				
+				<chat-right :msg="item.msg" :icon="item.icon" v-for="item in chatContent"></chat-right>
 			</div>
 
-			<div class="aui-chat">
-				<div class="aui-chat-header chat-time">2017年08月15日 00:11</div>
-
-				<div class="aui-chat-item aui-chat-left" >
-					<div class="aui-chat-media">
-						<img src="imgs/dog.jpg" alt="">
-					</div>
-					<div class="aui-chat-inner">
-						<div class="aui-chat-content">
-							<div class="aui-chat-arrow"></div>
-							在的
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			<!-- 聊天内容END -->
 		</div>
 
 		<!-- Footer -->
+		<div  id="express" class="aui-grid" >
+			    <div class="row aui-text-center">
+			        <div class="aui-col-xs-3 smile">
+			            <i class="aui-iconfont aui-icon-menu"></i>
+			            <p>menu</p>
+			        </div>
+			        <div class="aui-col-xs-3 smile">
+			            <i class="aui-iconfont aui-icon-paper"></i>
+			            <p>paper</p>
+			        </div>
+			        <div class="aui-col-xs-3 smile">
+			            <i class="aui-iconfont aui-icon-info"></i>
+			            <p>info</p>
+			        </div>
+			        <div class="aui-col-xs-3 smile">
+			            <i class="aui-iconfont aui-icon-question"></i>
+			            <p>question</p>
+			        </div>
+				</div>
+		</div>
 		<footer class="chatting-bar" id="footer">
-			<div class="chatting-bar-btn floatLeft">
-				<i class="iconfont icon-maikefeng"></i>
-			</div>
-			
-			<div class="chatting-bar-input">
-				<input type="text" placeholder="你想对Ta说什么？">
+			<div class="chatting-bar-btn floatLeft" >
+				<i onclick="toSpeak()" class="iconfont icon-maikefeng"></i>
+				<i onclick="toWord()" style="display: none" class="iconfont icon-gengduo icon-gengduo1"></i>
 			</div>
 
-			<div class="chatting-bar-btn floatRight">
+
+			<div class="chatting-bar-input">
+				<input class="input" type="text" placeholder='你想对Ta说什么？' v-model="msg" @keyup.enter="sendMsg()">
+				<input style="display: none" class="button" type="button" value='长按录音'>
+			</div>
+
+			<div class="chatting-bar-btn floatRight" onclick="express()">
 				<i class="iconfont icon-jiahao"></i>
 			</div>
-			<div class="chatting-bar-btn floatRight">
+			<div class="chatting-bar-btn floatRight" onclick="express()">
 				<i class="iconfont icon-xiaolian"></i>
 			</div>
 		</footer>
@@ -312,9 +311,12 @@
 	</div>	
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="aui/script/aui-toast.js"></script>
+<script src='aui/script/aui-scroll.js'></script>
 <script src="aui/script/aui-dialog.js"></script>
 <script type="text/javascript" src="aui/script/aui-tab.js" ></script>
-
+<script src="js/vue.min.js"></script>
 <script src='js/main.js'></script>
+<script src='js/chat.js'></script>
+
 </body>
 </html>
