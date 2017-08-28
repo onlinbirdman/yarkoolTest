@@ -57,7 +57,7 @@ var App = new Vue({
 					this.$set(this.chatContent,this.chatContent.length,{sender:'right',msg:msg, imgrul:'imgs/cat.jpg',icon:''})
 					this.msg = ''
 				}
-				localStorage.setItem('chatRecord',JSON.stringify(this.chatContent));
+// 				localStorage.setItem('chatRecord',JSON.stringify(this.chatContent));
 
 			}else if(icon == undefined){
 				dialog.alert({
@@ -76,17 +76,17 @@ var App = new Vue({
 					this.$set(this.chatContent,this.chatContent.length,{sender:'right',msg:'', imgrul:'imgs/cat.jpg',icon:icon})
 					this.msg = ''
 				}
-				localStorage.setItem('chatRecord',JSON.stringify(this.chatContent));
+// 				localStorage.setItem('chatRecord',JSON.stringify(this.chatContent));
 
 			}
 		}
 	},
 	components:{
 		'chat-right': chatRight
-	},
-	created() {
-		this.chatContent = JSON.parse(localStorage.getItem('chatRecord'));
 	}
+// 	created() {
+// 		this.chatContent = JSON.parse(localStorage.getItem('chatRecord'));
+// 	}
 })
 
 
