@@ -58,7 +58,7 @@ var App = new Vue({
 					this.msg = ''
 				}
 // 				localStorage.setItem('chatRecord',JSON.stringify(this.chatContent));
-
+				$('body').scrollTop('9999')
 			}else if(icon == undefined){
 				dialog.alert({
 			        title:"内容不能为空",
@@ -77,16 +77,16 @@ var App = new Vue({
 					this.msg = ''
 				}
 // 				localStorage.setItem('chatRecord',JSON.stringify(this.chatContent));
-
+				$('body').scrollTop('9999')
 			}
 		}
 	},
 	components:{
 		'chat-right': chatRight
 	}
-// 	created() {
-// 		this.chatContent = JSON.parse(localStorage.getItem('chatRecord'));
-// 	}
+	created() {
+		$('body').scrollTop('9999')
+	}
 })
 
 
